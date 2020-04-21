@@ -1,4 +1,4 @@
-# Spectra_Cleaner
+# Spectra Cleaner
 Searching for spectral outliers with normalizing flow.
 
 ## Installation
