@@ -16,7 +16,7 @@ y_tr = temp["spectra"]
 # randomize array
 ind_shuffle = np.arange(y_tr.shape[0])
 np.random.shuffle(ind_shuffle)
-np.save("ind_shuffle.npy", ind_shuffle)
+np.save("../ind_shuffle.npy", ind_shuffle)
 y_tr = y_tr[ind_shuffle,:][:12000,:]
 
 # convert into torch
