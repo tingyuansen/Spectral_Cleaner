@@ -10,7 +10,7 @@ from torch.autograd import Variable
 
 #========================================================================================================
 # restore data
-temp = np.load("../mock_all_spectra_no_noise_resample_prior_large.npz")
+temp = np.load("../mock_all_spectra_no_noise_resample_prior_large_clean.npz")
 y_tr = temp["spectra"]
 
 # randomize array
@@ -100,7 +100,7 @@ flow.cuda()
 #=======================================================================================================
 # In [4]
 # number of epoch and batch size
-num_epochs = 20001
+num_epochs = 2001
 batch_size = 512
 
 # break into batches
