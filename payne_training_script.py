@@ -5,7 +5,7 @@ from The_Payne import training
 
 #==========================================================================================
 # read spectra
-temp = np.load("../mock_all_spectra_no_noise_resample_prior_large_clean.npz")
+temp = np.load("../mock_all_spectra_no_noise_resample_prior_large_clean_2.npz")
 spectra = temp["spectra"]
 labels = temp["labels"].T
 labels[:,0] = labels[:,0]/1000.

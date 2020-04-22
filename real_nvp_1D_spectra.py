@@ -10,14 +10,14 @@ from torch.autograd import Variable
 
 #========================================================================================================
 # restore data
-temp = np.load("../mock_all_spectra_no_noise_resample_prior_large_clean.npz")
+temp = np.load("../mock_all_spectra_no_noise_resample_prior_large_clean_2.npz")
 y_tr = temp["spectra"]
 
 # randomize array
 ind_shuffle = np.arange(y_tr.shape[0])
 np.random.shuffle(ind_shuffle)
 np.save("../ind_shuffle.npy", ind_shuffle)
-y_tr = y_tr[ind_shuffle,:][:12000,:]
+y_tr = y_tr[ind_shuffle,:][:11000,:]
 
 # convert into torch
 y_tr = torch.from_numpy(y_tr).type(torch.cuda.FloatTensor)
@@ -100,7 +100,7 @@ flow.cuda()
 #=======================================================================================================
 # In [4]
 # number of epoch and batch size
-num_epochs = 2001
+num_epochs = 10001
 batch_size = 512
 
 # break into batches
@@ -136,7 +136,7 @@ for e in range(num_epochs):
         loss_array.append(loss.item())
 
     # save results typically
-    if e % 100 == 0:
+    if e % 1000 == 0:
         # save models
         torch.save(flow, '../flow_' + str(e) + '.pt')
         np.savez("../loss_results_" + str(e) + ".npz",\
