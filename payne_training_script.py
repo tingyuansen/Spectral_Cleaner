@@ -22,10 +22,10 @@ np.savez("../ind_shuffle_payne.npz", ind_shuffle=ind_shuffle)
 # separate into training and validation set
 spectra = spectra[ind_shuffle,:]
 labels = labels[ind_shuffle,:]
-training_spectra = spectra[:12000,:]
-training_labels = labels[:12000,:]
-validation_spectra = spectra[12000:,:]
-validation_labels = labels[12000:,:]
+training_spectra = spectra[:11000,:]
+training_labels = labels[:11000,:]
+validation_spectra = spectra[11000:,:]
+validation_labels = labels[11000:,:]
 print(training_spectra.shape)
 print(validation_spectra.shape)
 
